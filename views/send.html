@@ -89,7 +89,7 @@
               <label for="alternative">Amount in {{ alternativeName }} </label>
               <div class="small-9 columns">
                 <input type="number" id="alternative_amount"
-                ng-disabled="loading || !isRateAvailable "
+                ng-disabled="loading || !isRateAvailable || ($root.merchant && +$root.merchant.total > 0) || $root.merchantError"
                 name="alternative" placeholder="Amount" ng-model="alternative"
                 required
                 autocomplete="off"
